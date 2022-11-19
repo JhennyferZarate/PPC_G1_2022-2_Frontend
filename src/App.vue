@@ -16,4 +16,13 @@
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
 }
+:root{
+    --primary: #090a0a;
+    --secondary: #11285a;
+    --tertiary: #17377A;
+    --quaternary: #2659C7;
+    --background: rgb(255, 255, 255);
+    --light: #ecf0f1;
+    --menubar-height: 50px;
+}
 </style>

@@ -3,9 +3,10 @@
         <Menubar />
         <div class="content">
             <div class="textBox">
-                <h1>TU SALUD ES LO PRIMERO</h1>
-                <p>Atiéndete con nosotros</p>
-                <button>Reservar una cita</button>
+                <h1>Primero es <b>TU SALUD</b></h1>
+                <h2>Luego el resto</h2>
+                <p>En la <b>Clínica CADUCEUS</b> te atendemos rápidamente.</p>
+                <button><router-link class="text-button" to="/login">Saca tu cita</router-link></button>
             </div>
             <img src="../assets/woman-medical.png" alt="">
             
@@ -21,23 +22,16 @@
 </script>
 
 <style lang="scss">
-:root{
-    --primary: #2c3e50;
-    --secondary: #bdc3c7;
-    --dark: #34495e;
-    --light: #ecf0f1;
-    --menubar-height: 50px;
-}
 .content{
     position:relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 30rem;
     padding-right: 100px;
     padding-left: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgb(255, 255, 255);
+    background: var(--background);
     .textbox{
         position: relative;
         max-width: 600px;
@@ -46,14 +40,50 @@
         font-size: 70px;
         font-weight: 700;
         color: var(--primary);
+        margin-bottom: 2px;
+        b{
+            color: var(--secondary);
+        }
+    }
+    h2{
+        font-size: 50px;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 15px;
     }
     p{
-        font-size: 40px;
+        font-size: 30px;
+        b{
+            color: var(--secondary);
+        }
     }
     img{
         position: relative;
-        max-width: 700px;
+        max-width: 60rem;
         height: auto;
     }
+    button{
+        background: var(--tertiary);
+        
+        border: none;
+        margin-top: 40px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 30px;
+        font-weight: 700;
+        text-decoration-line: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover{
+            background: var(--secondary);
+            color: var(--background);
+        }
+        .text-button{
+            color: var(--background);
+            text-decoration-line: none;
+        }
+    }
+
 }
+
 </style>
