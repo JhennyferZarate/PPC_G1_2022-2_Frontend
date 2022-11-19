@@ -84,6 +84,14 @@
         font-size: 30px;
         font-weight: 600;
         cursor: pointer;
+        &:hover{
+            background: var(--secondary);
+            color: var(--background);
+        }
+        .text-button{
+            color: var(--background);
+            text-decoration-line: none;
+        }
     }
 }
 </style>
