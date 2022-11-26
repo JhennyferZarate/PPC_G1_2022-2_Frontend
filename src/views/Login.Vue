@@ -13,7 +13,10 @@
                         <p>Contraseña</p>
                         <input type="password" name="password" required>
                     </div>
-                    <button><router-link class="text-button" to="/patient/:id">Ingresar</router-link></button>
+                    <button v-on:click="login()"><router-link class="text-button" to="/patient/:id">Ingresar</router-link></button>
+                    <div class="textbox">
+                        <p>Si no tienes cuenta regístrate <a><router-link class="text-register" to="/register">aquí</router-link></a></p>
+                    </div>
                 </div>
             </form>
             
@@ -24,7 +27,7 @@
 </template>
 
 <script setup>
-  import Menubar from '../components/MenuBar.vue'
+    import Menubar from '../components/MenuBar.vue'
 
 </script>
 
@@ -70,6 +73,8 @@
             border-bottom: 1px solid var(--secondary);
             background: transparent;
             outline: none;
+            font-size:100%;
+            
         }
     }
     button{
@@ -92,6 +97,11 @@
             color: var(--background);
             text-decoration-line: none;
         }
+    }
+    .text-register{
+        font-weight: 700;
+        color: var(--secondary);
+        text-decoration-line: none;
     }
 }
 </style>

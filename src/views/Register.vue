@@ -2,22 +2,37 @@
     <div class="home-page">
         <Menubar />
         <div class="content-register">
-            <form action="/patient:id" id="formulario" method="POST">
+            <form action="/patient" id="formulario" method="POST">
                 <div class="login-box">
                     <h1>Crear cuenta</h1>
                     <div class="textbox">
                         <p>Nombres</p>
-                        <input type="text" name="patient_name" required>
+                        <input type="text" name="Nombre_Paciente" required>
                     </div>
                     <div class="textbox">
                         <p>Apellidos</p>
-                        <input type="text" name="patient_last_name" required>
+                        <input type="text" name="Apellido_Paciente" required>
                     </div>
                     <div class="textbox">
-                        <p>Edad</p>
-                        <input type="number" name="patient_age" required>
+                        <p>Correo electrónico</p>
+                        <input type="email" name="Email_Paciente" required>
                     </div>
-                    <button><router-link class="text-button" to="/patient/:id">Registrarse</router-link></button>
+                    <div class="textbox">
+                        <p>Contraseña</p>
+                        <input type="password" name="Clave_Paciente" required>
+                    </div>
+                    <div class="textbox">
+                        <p>DNI</p>
+                        <input type="text" name="Cedula_Paciente" required>
+                    </div>
+                    <div class="textbox">
+                        <p>Fecha de nacimiento</p>
+                        <input type="date" name="DATE_Nac_Paciente" required>
+                    </div>
+                    <button v-on:click="save()"><router-link class="text-button" to="/login">Registrarse</router-link></button>
+                    <div class="textbox">
+                        <p>Si tienes cuenta inicia sesión <a><router-link class="text-login" to="/login">aquí</router-link></a></p>
+                    </div>
                 </div>
             </form>
             
@@ -28,8 +43,25 @@
 </template>
 
 <script setup>
-    import Menubar from '../components/MenuBar.vue'
+    import Menubar from '../components/MenuBar.vue'   
     
+    const save = () => {
+        const form = document.getElementById('formulario')
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const data = new FormData(form)
+            console.log(data)
+            fetch('http://127.0.0.1:4000/paciente', {
+                method: 'POST',
+                body: data
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        })
+    }
 
 </script>
 
@@ -75,6 +107,7 @@
             border-bottom: 1px solid var(--secondary);
             background: transparent;
             outline: none;
+            font-size:100%;
         }
     }
     button{
@@ -97,6 +130,11 @@
             color: var(--background);
             text-decoration-line: none;
         }
+    }
+    .text-login{
+        font-weight: 700;
+        color: var(--secondary);
+        text-decoration-line: none;
     }
 }
 </style>
