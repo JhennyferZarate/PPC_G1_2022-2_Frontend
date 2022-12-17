@@ -21,8 +21,12 @@ const router = createRouter({
             component: () => import('../views/Patient/Home.vue')
         },
         {
-            path: '/patient/:id/makeappointment',
-            component: () => import('../views/Patient/MakeAppointment.vue')
+            path: '/patient/chat',
+            component: () => import('../views/Patient/Chat.vue')
+        },
+        {
+            path: '/medical',
+            component: () => import('../views/Medical/Home.vue')
         }
     ]
 })

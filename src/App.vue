@@ -23,8 +23,9 @@
     --secondary: #11285a;
     --tertiary: #17377A;
     --quaternary: #2659C7;
-    --background: rgb(255, 255, 255);
+    --background: #fff;
     --light: #ecf0f1;
+    --dark: #2c2c2c;
     --menubar-height: 50px;
 }
 </style>

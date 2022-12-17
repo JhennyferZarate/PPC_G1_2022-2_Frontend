@@ -3,8 +3,7 @@
         <header class="menubar">
             <a href="/" class="logo"><img src="../assets/logo-268px.png"></a>
             <ul>
-                <li><router-link to="/login">Iniciar Sesión</router-link></li>
-                <li><router-link to="/register">Registrarse</router-link></li>
+                <li><router-link to="">Cerrar Sesión</router-link></li>
             </ul>
         </header>
     </section>

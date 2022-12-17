@@ -7,11 +7,11 @@
                     <h1>Iniciar Sesión</h1>
                     <div class="textbox">
                         <p>Correo electrónico</p>
-                        <input type="text" name="email" required>
+                        <input type="text" name="Email_Paciente" required>
                     </div>
                     <div class="textbox">
                         <p>Contraseña</p>
-                        <input type="password" name="password" required>
+                        <input type="password" name="Clave_Paciente" required>
                     </div>
                     <button v-on:click="login()"><router-link class="text-button" to="/patient/:id">Ingresar</router-link></button>
                     <div class="textbox">
